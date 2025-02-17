@@ -1,6 +1,6 @@
 # Streamlit chat assistant
 
-This is a streamlit app that will run LLM models locally using Ollama. You need to have Ollama installed. You need to have at least one model pulled from Ollama (I recommend starting with a samll one).
+This is a streamlit app that will run LLM models locally using Ollama. You need to have Ollama installed. You need to have at least one model pulled from Ollama (I recommend starting with a small one).
 
 You can go the the [Ollama website](https://ollama.com/) to see installing instructions.
 
