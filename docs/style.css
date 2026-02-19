@@ -1,0 +1,407 @@
+/* ===========================
+   CSS Reset and Base Styles
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   Color Scheme Variables
+   =========================== */
+
+:root {
+    --color-primary: #00ffff;      /* Cyan accent */
+    --color-bg: #0a0a0a;           /* Near black background */
+    --color-surface: #1a1a1a;      /* Slightly lighter surface */
+    --color-text: #ffffff;         /* White text */
+    --color-text-secondary: #b0b0b0; /* Gray text */
+    --color-border: #333333;       /* Border color */
+    --color-code-bg: #151515;      /* Code background */
+    
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+    
+    --max-width: 800px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+/* ===========================
+   Typography
+   =========================== */
+
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: var(--spacing-sm);
+}
+
+h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    position: relative;
+    padding-left: var(--spacing-sm);
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    width: 4px;
+    background-color: var(--color-primary);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-sm);
+    border-left: 3px solid var(--color-primary);
+}
+
+strong {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* ===========================
+   Layout
+   =========================== */
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.site-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+main {
+    padding: var(--spacing-lg) 0;
+    min-height: 70vh;
+}
+
+article {
+    margin-bottom: var(--spacing-xl);
+}
+
+.site-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.site-footer p {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ===========================
+   Navigation
+   =========================== */
+
+.nav-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* ===========================
+   Metadata
+   =========================== */
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.date {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.tag:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
+
+/* ===========================
+   Links
+   =========================== */
+
+a {
+    color: var(--color-primary);
+}
+
+.inline-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary);
+    transition: border-color 0.2s;
+}
+
+.inline-link:hover {
+    border-bottom-color: transparent;
+}
+
+.footer-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: var(--color-primary);
+}
+
+/* ===========================
+   Lists
+   =========================== */
+
+ul, ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.6;
+}
+
+ul li::marker {
+    color: var(--color-primary);
+}
+
+ol li::marker {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ===========================
+   Code Blocks
+   =========================== */
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background-color: var(--color-code-bg);
+    color: var(--color-primary);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: var(--color-code-bg);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 4px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    overflow-x: auto;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: var(--color-text);
+    display: block;
+    line-height: 1.5;
+}
+
+/* ===========================
+   Images
+   =========================== */
+
+.article-image {
+    width: 100%;
+    height: auto;
+    margin: var(--spacing-lg) 0;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    display: block;
+}
+
+.image-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-top: calc(var(--spacing-sm) * -1);
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    border: 2px solid var(--color-primary);
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.button-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    pre {
+        font-size: 0.85rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .button {
+        text-align: center;
+    }
+}
+
+/* ===========================
+   Accessibility
+   =========================== */
+
+:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
